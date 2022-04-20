@@ -38,7 +38,7 @@ import services.UserService;
 /**
  * FXML Controller class
  *
- * @author Nayrouz
+ * @author hilel
  */
 public class ResetPasswordFXMLController implements Initializable {
 

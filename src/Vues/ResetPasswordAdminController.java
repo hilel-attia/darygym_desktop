@@ -39,7 +39,7 @@ import services.UserService;
 /**
  * FXML Controller class
  *
- * @author Nayrouz
+ * @author hilel
  */
 public class ResetPasswordAdminController implements Initializable {
 

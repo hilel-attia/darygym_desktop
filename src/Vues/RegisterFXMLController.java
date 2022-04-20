@@ -36,7 +36,7 @@ import services.UserService;
 /**
  * FXML Controller class
  *
- * @author Nayrouz
+ * @author hilel
  */
 public class RegisterFXMLController implements Initializable {
 
@@ -47,22 +47,14 @@ public class RegisterFXMLController implements Initializable {
     private TextField tfprenom;
     @FXML
     private PasswordField tfpassword;
-    @FXML
-    private PasswordField tfconfirmpass;
-    @FXML
-    private DatePicker date;
-    @FXML
-    private TextField tftelephone;
-    @FXML
-    private TextField tfadresse;
+   
     @FXML
     private TextField tfemail;
 
     UserService us = new UserService();
     @FXML
     private Label newaccout;
-    @FXML
-    private Label error_numtel;
+    
     @FXML
     private Button connexion;
     @FXML
@@ -111,12 +103,9 @@ public class RegisterFXMLController implements Initializable {
         String nom_complet = tfprenom.getText();
         String email = tfemail.getText();
         String password = tfpassword.getText();
-        String confirmPass = tfconfirmpass.getText();
-        Date d = Date.valueOf(date.getValue());
-        int tel = Integer.valueOf(tftelephone.getText());
-        String adresse = tfadresse.getText();
-        String role = "Client";
-        if (whenMatchesTenDigitsNumber_thenCorrect(tftelephone.getText())) {
+       
+        String role = "Adherant";
+    
             user u = new user(username, nom_complet, email, password, role);
             if (us.ajouterUserPst(u)) {
                 utils.Mailing.sendMail(u);
@@ -127,14 +116,14 @@ public class RegisterFXMLController implements Initializable {
             Stage stage = (Stage) fermer.getScene().getWindow();
             stage.close();
             GotoFXML("LoginFXML", "ForU", event);
-             }else{System.out.println("number is wrong!!!");}
+           
 //        }else{System.out.println("number is wrong!!!");}
         //error_numtel
     }
 
     @FXML
     private void gotoLogin(MouseEvent event) {
-        GotoFXML("LoginFXML", "ForU", event);
+        GotoFXML("LoginFXML", "darygym", event);
     }
 
     @FXML

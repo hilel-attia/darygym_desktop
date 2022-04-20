@@ -33,7 +33,7 @@ import javafx.scene.control.Alert;
 /**
  * FXML Controller class
  *
- * @author Nayrouz
+ * @author hilel
  */
 public class LoginFXMLController implements Initializable {
 

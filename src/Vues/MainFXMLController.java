@@ -31,7 +31,7 @@ import static pidev.Pidev.Userconnected;
 /**
  * FXML Controller class
  *
- * @author Nayrouz
+ * @author hilel
  */
 public class MainFXMLController implements Initializable {
 

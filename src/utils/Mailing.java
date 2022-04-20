@@ -27,7 +27,7 @@ public class Mailing {
 
         Properties prop = new Properties();
         final String moncompteEmail = "clusteresprit@gmail.com";
-        final String psw = "espritA@";
+        final String psw = "itmfwupyywzqqkjw";
         prop.put("mail.smtp.host", "smtp.gmail.com");
         prop.put("mail.smtp.port", "587");
         prop.put("mail.smtp.auth", "true");

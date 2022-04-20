@@ -111,7 +111,7 @@ public class UserService {
     }
 
     public ObservableList<user> readAll() {
-        String req = "select * from user";
+         String req = "Select * from `user`";
 
         ObservableList<user> list = FXCollections.observableArrayList();
         try {

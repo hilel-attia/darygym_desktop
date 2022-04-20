@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Dhia
+ * @author hilel
  */
 public class SceneChanger {
     
