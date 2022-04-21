@@ -5,12 +5,14 @@
  */
 package validation;
 
+import java.util.regex.Matcher;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
  *
- * @author Dhia
+ * @author hilel
  */
 public class TextFieldValidation {
     
@@ -57,5 +59,19 @@ public class TextFieldValidation {
         lb.setText(msg);
         return b;
     }
-    
+     public boolean testEmail(String email) {
+	Matcher matcher = Constantes.VALID_EMAIL_ADDRESS_REGEX.matcher(email);
+	return matcher.find();
+    }
+
+    public boolean testPassword(String password) {
+	Matcher matcher = Constantes.VALID_PASSWORD_REGEX.matcher(password);
+	return matcher.find();
+    }
+     public void information_Box(String title, String message) {
+	Alert dg = new Alert(Alert.AlertType.INFORMATION);
+	dg.setTitle(title);
+	dg.setContentText(message);
+	dg.show();
+    }
 }

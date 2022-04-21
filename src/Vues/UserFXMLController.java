@@ -14,10 +14,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Date;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,7 +36,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
+
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
@@ -48,7 +45,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
+
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -56,6 +53,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javax.swing.JFileChooser;
 import services.UserService;
+import validation.TextFieldValidation;
+
 
 /**
  * FXML Controller class
@@ -89,8 +88,7 @@ public class UserFXMLController implements Initializable {
     private TextField tfemail;
     @FXML
     private TextField tfpassword;
-    @FXML
-    private TextField tfconfirmpass;
+  
    
     @FXML
     private ComboBox<String> cbrole;
@@ -170,25 +168,48 @@ public class UserFXMLController implements Initializable {
 
     @FXML
     private void CreateUser(ActionEvent event) {
-
-        String username = tfnom.getText();
+      user u = new user();
+        TextFieldValidation uUtiles = new TextFieldValidation();
+         String username = tfnom.getText();
         String nom_complet = tfprenom.getText();
         String email = tfemail.getText();
         String password = tfpassword.getText();
-       
-        
         String role = cbrole.getSelectionModel().getSelectedItem();
 
-        user u = new user(username, nom_complet, email, password, role);
-        if (us.ajouterUserPst(u)) {
-            AlertWindow("Ajouter " + role, role + " ajouté avec succés", AlertType.INFORMATION);
-        } else {
-            AlertWindow("Ajouter " + role, "Echec d'ajout", AlertType.ERROR);
-        }
+         if (username.isEmpty()) {
+	    alert_Box("Verifier votre nom", "Votre nom ne doit pas être vide");
+         }else if (nom_complet.isEmpty()) {
+	    alert_Box("Verifier votre mail", "veillez saisir une adresse mail valide");
+	} else if (!uUtiles.testEmail(email)) {    
+	    alert_Box("Verifier votre mail", "veillez saisir une adresse non existant");
+	} else if (!uUtiles.testPassword(password)) {
+	    alert_Box("Verifier mot de passe", "Votre mot de passe doit doit contenir au moins une une majuscule et un chiffre ");
+	 
+	
+	
+       
+	} else {
+          u.setUsername(username);
+          u.setNomcomplet(nom_complet);
+          u.setEmail(email);
+          u.setPassword(password);
+            u.setRole(role);
+            
+            
+        us.ajouterUserPst(u);
+        uUtiles.information_Box("Compte créé avec succès", "votre compte est ajouté");
 
         init();
     }
-
+    }
+    
+    public void alert_Box(String title, String message) {
+	Alert dg = new Alert(Alert.AlertType.WARNING);
+	dg.setTitle(title);
+	dg.setContentText(message);
+	dg.show();
+    }
+    
     @FXML
     private void SearchUser(KeyEvent event) {
         String search = tfrecherche.getText();
@@ -217,13 +238,13 @@ public class UserFXMLController implements Initializable {
         tfprenom.setText(u.getNomcomplet());
         tfemail.setText(u.getEmail());
         tfpassword.setText(u.getPassword());
-        tfconfirmpass.setText(u.getPassword());
+       
        
        
         cbrole.setValue(u.getRole());
     }
 
-    @FXML
+     @FXML
     private void ModifUser(ActionEvent event) {
         user u = tableuser.getSelectionModel().getSelectedItem();
 
@@ -231,22 +252,19 @@ public class UserFXMLController implements Initializable {
         String nom_complet = tfprenom.getText();
         String email = tfemail.getText();
         String password = tfpassword.getText();
-       
-        
-        String role = cbrole.getSelectionModel().getSelectedItem();
+        String roles = cbrole.getSelectionModel().getSelectedItem();
 
         u.setUsername(username);
         u.setNomcomplet(nom_complet);
         u.setEmail(email);
         u.setPassword(password);
-       
-        u.setRole(role);
+        u.setRole(roles);
         if (us.modifierUserPst(u)) {
-            AlertWindow("Modifier " + role, role + " modifié avec succés", AlertType.INFORMATION);
+            AlertWindow("Modifier " + roles, roles + " modifié avec succés", AlertType.INFORMATION);
         } else {
-            AlertWindow("Modifier " + role, "Echec de modificaition", AlertType.ERROR);
+            AlertWindow("Modifier " + roles, "Echec de modificaition", AlertType.ERROR);
         }
-        init();
+        tableuser.refresh();
     }
 
     private void GotoFXML(String vue, String title, Event aEvent) {
@@ -263,8 +281,9 @@ public class UserFXMLController implements Initializable {
         }
     }
 
-    @FXML
+  @FXML
     private void DeleteUser(ActionEvent event) {
+        
         user u = tableuser.getSelectionModel().getSelectedItem();
         if (us.suppUserPst(u)) {
             AlertWindow("Supprimer " + u.getRole(), u.getRole() + " supprimé avec succés", AlertType.INFORMATION);
@@ -401,4 +420,10 @@ public class UserFXMLController implements Initializable {
         }
     }
 
+    
+    
+    
+    
+    
+    
 }

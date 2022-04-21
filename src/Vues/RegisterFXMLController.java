@@ -32,6 +32,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import services.UserService;
+import validation.TextFieldValidation;
 
 /**
  * FXML Controller class
@@ -99,20 +100,38 @@ public class RegisterFXMLController implements Initializable {
     @FXML
     private void ajout(ActionEvent event) throws Exception {
 
-        String username = tfnom.getText();
+       user u = new user();
+        TextFieldValidation uUtiles = new TextFieldValidation();
+         String username = tfnom.getText();
         String nom_complet = tfprenom.getText();
         String email = tfemail.getText();
         String password = tfpassword.getText();
+      String role = "Adherant";
+         if (username.isEmpty()) {
+	    alert_Box("Verifier votre nom", "Votre nom ne doit pas être vide");
+         }else if (nom_complet.isEmpty()) {
+	    alert_Box("Verifier votre mail", "veillez saisir une adresse mail valide");
+	} else if (!uUtiles.testEmail(email)) {    
+	    alert_Box("Verifier votre mail", "veillez saisir une adresse non existant");
+	} else if (!uUtiles.testPassword(password)) {
+	    alert_Box("Verifier mot de passe", "Votre mot de passe doit doit contenir au moins une une majuscule et un chiffre ");
+	 
+	
+	
        
-        String role = "Adherant";
-    
-            user u = new user(username, nom_complet, email, password, role);
-            if (us.ajouterUserPst(u)) {
+	} else {
+          u.setUsername(username);
+          u.setNomcomplet(nom_complet);
+          u.setEmail(email);
+          u.setPassword(password);
+     u.setRole(role);
+            
+            
+        us.ajouterUserPst(u);
+        uUtiles.information_Box("Compte créé avec succès", "votre compte est ajouté");
+
                 utils.Mailing.sendMail(u);
-                AlertWindow("ForU", "Bienvenu " + nom_complet, Alert.AlertType.INFORMATION);
-            } else {
-                AlertWindow("ForU", "Essayer une autre fois", Alert.AlertType.ERROR);
-            }
+               
             Stage stage = (Stage) fermer.getScene().getWindow();
             stage.close();
             GotoFXML("LoginFXML", "ForU", event);
@@ -120,7 +139,14 @@ public class RegisterFXMLController implements Initializable {
 //        }else{System.out.println("number is wrong!!!");}
         //error_numtel
     }
-
+    }
+    
+     public void alert_Box(String title, String message) {
+	Alert dg = new Alert(Alert.AlertType.WARNING);
+	dg.setTitle(title);
+	dg.setContentText(message);
+	dg.show();
+    }
     @FXML
     private void gotoLogin(MouseEvent event) {
         GotoFXML("LoginFXML", "darygym", event);

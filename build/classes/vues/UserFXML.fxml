@@ -51,7 +51,7 @@
       <TableView fx:id="tableuser" layoutX="330.0" layoutY="145.0" onMouseClicked="#preModSupp" prefHeight="581.0" prefWidth="962.0" style="-fx-border-color: #6aa84f; -fx-background-color: #a9a9a9 , white , white; -fx-background-radius: 7px 7px 0px 0px; -fx-background-insets: 0 11px 0 0; -fx-padding: 0 0 5px 0;" styleClass="ba">
         <columns>
           <TableColumn fx:id="colnom" prefWidth="198.0" text="Username" />
-          <TableColumn fx:id="colprenom" prefWidth="207.0" text="Nom_Complet" />
+          <TableColumn fx:id="colprenom" prefWidth="207.0" text="Nom_complet" />
             <TableColumn fx:id="colemail" prefWidth="192.0" text="Email" />
             <TableColumn fx:id="colpassword" prefWidth="171.0" text="Password" />
             <TableColumn fx:id="colrole" prefWidth="193.0" text="Role" />
