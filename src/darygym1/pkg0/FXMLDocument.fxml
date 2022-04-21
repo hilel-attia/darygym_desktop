@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="libelleInput" prefHeight="725.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="darygym1.pkg0.FXMLDocumentController">
+    <children>
+      <AnchorPane layoutX="1.0" prefHeight="813.0" prefWidth="1049.0">
+         <children>
+            <TextField fx:id="libelleInput1" layoutX="90.0" layoutY="55.0" prefHeight="37.0" prefWidth="260.0" />
+            <TableView fx:id="table_exercicecategorie1" layoutX="48.0" layoutY="443.0" prefHeight="148.0" prefWidth="327.0">
+              <columns>
+                <TableColumn fx:id="col_id1" prefWidth="118.0" text="ID" />
+                <TableColumn fx:id="col_libelle1" prefWidth="77.0" text="LIBELLE" />
+                  <TableColumn fx:id="col_image1" prefWidth="131.0" text="IMAGE" />
+              </columns>
+            </TableView>
+            <Button fx:id="addcaButton" layoutX="47.0" layoutY="388.0" mnemonicParsing="false" onAction="#Addca" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #00BFFF;" text="add" textFill="WHITE" />
+            <Button fx:id="updateca" layoutX="281.0" layoutY="388.0" mnemonicParsing="false" onAction="#updatecategorie" prefHeight="37.0" prefWidth="86.0" style="-fx-background-color: orange;" text="Update" textFill="WHITE" />
+            <Button fx:id="delete" layoutX="169.0" layoutY="388.0" mnemonicParsing="false" onAction="#delete" prefHeight="0.0" prefWidth="86.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE" wrapText="true" />
+            <ImageView fx:id="imgView" fitHeight="160.0" fitWidth="184.0" layoutX="48.0" layoutY="632.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="35.0" layoutY="61.0" text="libelle" />
+            <Label layoutX="34.0" layoutY="120.0" text="image" />
+            <Button fx:id="addImage" alignment="BASELINE_CENTER" layoutX="90.0" layoutY="152.0" mnemonicParsing="false" onAction="#import_image" prefHeight="25.0" prefWidth="151.0" text="Import Image">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <TextField fx:id="imageInput" layoutX="90.0" layoutY="112.0" prefHeight="30.0" prefWidth="260.0" />
+            <TableView fx:id="table_exercice" layoutX="499.0" layoutY="443.0" prefHeight="148.0" prefWidth="471.0">
+              <columns>
+                <TableColumn fx:id="id_exercice" prefWidth="55.0" text="ID" />
+                <TableColumn fx:id="categorie" prefWidth="61.0" text="CATEGORIE" />
+                  <TableColumn fx:id="nom" prefWidth="58.0" text="NOM" />
+                  <TableColumn fx:id="imageexercice" prefWidth="58.0" text="image" />
+                  <TableColumn fx:id="description" prefWidth="88.0" text="DESCR" />
+                  <TableColumn fx:id="video" prefWidth="54.0" text="video" />
+                  <TableColumn fx:id="document" prefWidth="96.0" text="DOCUMENTS" />
+              </columns>
+            </TableView>
+            <Label layoutX="499.0" layoutY="74.0" text="categorie" />
+            <Label layoutX="499.0" layoutY="120.0" text="Nom" />
+            <Label layoutX="499.0" layoutY="167.0" text="image" />
+            <Label layoutX="498.0" layoutY="213.0" text="description" />
+            <Label layoutX="498.0" layoutY="265.0" text="Video" />
+            <Label layoutX="498.0" layoutY="315.0" text="documents" />
+            <TextField fx:id="categorieInput" layoutX="590.0" layoutY="68.0" />
+            <TextField fx:id="nomInput" layoutX="590.0" layoutY="114.0" />
+            <TextField fx:id="imageInput1" layoutX="590.0" layoutY="161.0" />
+            <TextField fx:id="descriptionInput" layoutX="590.0" layoutY="207.0" />
+            <TextField fx:id="videoInput" layoutX="590.0" layoutY="259.0" />
+            <TextField fx:id="docIndput" layoutX="590.0" layoutY="309.0" />
+            <Button fx:id="importImage" layoutX="790.0" layoutY="161.0" mnemonicParsing="false" onAction="#addImage" text="Import" />
+            <Button fx:id="Importvideo" layoutX="790.0" layoutY="259.0" mnemonicParsing="false" onAction="#importvideo" text="Import" />
+            <Button fx:id="Importdoc" layoutX="790.0" layoutY="309.0" mnemonicParsing="false" onAction="#importdoc" text="Import" />
+            <Button fx:id="addexercice" layoutX="500.0" layoutY="388.0" mnemonicParsing="false" onAction="#addexercice" prefHeight="37.0" prefWidth="86.0" text="add" />
+            <Button fx:id="deleteexercice" layoutX="603.0" layoutY="388.0" mnemonicParsing="false" onAction="#deleteexercice" prefHeight="37.0" prefWidth="86.0" text="Delete" />
+            <Button fx:id="updateexercice" layoutX="708.0" layoutY="388.0" mnemonicParsing="false" onAction="#updateexercice" prefHeight="37.0" prefWidth="86.0" text="Update" />
+            <ImageView fx:id="img1" fitHeight="134.0" fitWidth="168.0" layoutX="500.0" layoutY="632.0" pickOnBounds="true" preserveRatio="true" />
+            <MediaView fx:id="media" fitHeight="200.0" fitWidth="200.0" layoutX="780.0" layoutY="599.0" />
+            <ComboBox fx:id="categorieInput1" layoutX="593.0" layoutY="14.0" onAction="#combobox" prefHeight="37.0" prefWidth="193.0" />
+            <Label layoutX="492.0" layoutY="20.0" text="categorie" />
+         </children>
+      </AnchorPane>
+    </children>
+   <effect>
+      <MotionBlur angle="360.0" radius="0.0" />
+   </effect>
+   <cursor>
+      <Cursor fx:constant="S_RESIZE" />
+   </cursor>
+</AnchorPane>
