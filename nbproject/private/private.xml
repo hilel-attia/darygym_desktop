@@ -3,12 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/Vues/AdminCommandeController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/Vues/Main.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/validation/TextFieldValidation.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/validation/ImageViewValidation.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/entities/user.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/validation/Constantes.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/Vues/UserFXMLController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/services/UserService.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/Pidev.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/Vues/MainClientFXMLController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/Vues/LoginFXMLController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/Vues/AdminMenuController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/utils/DataSource.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/entities/MD5Utils.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/Vues/RegisterFXMLController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/Vues/PiechartController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/PIDEV-DARYGYM/pidev/src/Vues/ResetPasswordFXMLController.java</file>
         </group>
     </open-files>
 </project-private>
