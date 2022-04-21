@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="edu.darygym.gui.ReservationController">
+    <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="737.0" stylesheets="@../../../../../3eme/S2/PI-DEV/JAVA/upgradi%20skander/upgradi/src/views/dashbord.css">
+         <left>
+            <AnchorPane prefHeight="528.0" prefWidth="244.0" style="-fx-background-color: #2DCC6E;" BorderPane.alignment="CENTER">
+               <children>
+                  <Text fill="#f8f3f3" layoutX="5.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des evenement" textAlignment="CENTER" wrappingWidth="231.859375">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="262.0" fitWidth="207.0" layoutX="5.0" layoutY="54.0">
+                     <image>
+                        <Image url="@../../../assets/assets.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="525.0" prefWidth="507.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="tf_ville" layoutX="197.0" layoutY="222.0" prefHeight="33.0" prefWidth="233.0" promptText="ville" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+                  <TextField fx:id="tf_num" layoutX="202.0" layoutY="292.0" prefHeight="33.0" prefWidth="229.0" promptText="Numéro de telephone" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+                  <Button fx:id="btn_reserver" layoutX="163.0" layoutY="443.0" mnemonicParsing="false" onAction="#createEvent" prefHeight="30.0" prefWidth="112.0" style="-fx-background-color: #2DCC6E;" styleClass="cursor_hand" text="Reserver" textFill="#fffdfd">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Text fill="#615d5d" layoutX="60.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#615d5d" layoutX="59.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#615d5d" layoutX="61.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lieu">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="tf_email" layoutX="198.0" layoutY="349.0" prefHeight="33.0" prefWidth="232.0" promptText="email" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+                  <Text fill="#615d5d" layoutX="62.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="tf_nomPart" layoutX="197.0" layoutY="96.0" prefHeight="33.0" prefWidth="234.0" promptText="Nompart" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+                  <Text fill="#615d5d" layoutX="58.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#615d5d" layoutX="61.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" text="image ">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#615d5d" layoutX="62.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date-Fin">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#615d5d" layoutX="61.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="tf_prenom" layoutX="200.0" layoutY="160.0" prefHeight="33.0" prefWidth="233.0" promptText="prenom" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+                  <Label layoutX="55.0" layoutY="102.0" text="Votre Nom" />
+                  <Label layoutX="46.0" layoutY="166.0" text="Votre Prenom" />
+                  <Label layoutX="78.0" layoutY="228.0" text="Ville" />
+                  <Label layoutX="23.0" layoutY="298.0" text="Numero de telephone" />
+                  <Label layoutX="32.0" layoutY="355.0" text="email-participents" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

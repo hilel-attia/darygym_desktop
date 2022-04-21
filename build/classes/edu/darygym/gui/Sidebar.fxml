@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane fx:id="bg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.darygym.gui.SidebarController">
+   <left>
+      <VBox prefHeight="463.0" prefWidth="129.0" style="-fx-background-color: #0D1824;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#HomeAdmin" prefHeight="47.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Admin" textFill="#eeeaea">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#GestionEvenement" prefHeight="47.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Gestion des evenement" textFill="#eeeaea">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#Archive" prefHeight="47.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Archive" textFill="#eeeaea">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#Participent" prefHeight="47.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Participent" textFill="#eeeaea">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#HomeClient" prefHeight="47.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Client" textFill="#eeeaea">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#Evenement" prefHeight="47.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Evenement" textFill="#eeeaea">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#ArchiveEvents" prefHeight="47.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Archive des evenements " textFill="#eeeaea">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane fx:id="ap" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="195.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home Admin " wrappingWidth="146.6708984375" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
