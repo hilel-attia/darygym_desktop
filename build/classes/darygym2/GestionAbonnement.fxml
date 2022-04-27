@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="darygym2.GestionAbonnementController">
+    <stylesheets>
+        <URL value="@gestionabonnement.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="-7.0" layoutY="10.0" prefHeight="530.0" prefWidth="988.0" style="-fx-background-color: #FFF; -fx-background-radius: 10;">
+         <children>
+            <VBox prefHeight="530.0" prefWidth="207.0" style="-fx-background-color: #E5E5E5;">
+               <children>
+                  <ImageView fitHeight="111.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../PI3%20(1)/PI3/imgs/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="222.0" stylesheets="@../../../../PI3%20(1)/PI3/src/utils/fullpackstyling.css" text="Accueil">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../PI3%20(1)/PI3/imgs/icons8_details_24px_3.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#allezversabn" prefHeight="37.0" prefWidth="281.0" stylesheets="@../../../../PI3%20(1)/PI3/src/utils/fullpackstyling.css" text="Offres">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../PI3%20(1)/PI3/imgs/icons8_compass_24px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="47.0" mnemonicParsing="false" onAction="#allezversoff" prefHeight="37.0" prefWidth="210.0" stylesheets="@../../../../PI3%20(1)/PI3/src/utils/fullpackstyling.css" text="Abonnement">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../PI3%20(1)/PI3/imgs/icons8_pie_chart_24px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="84.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="210.0" stylesheets="@../../../../PI3%20(1)/PI3/src/utils/fullpackstyling.css" text="Setttings">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../PI3%20(1)/PI3/imgs/icons8_settings_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Pane prefHeight="254.0" prefWidth="279.0">
+                     <children>
+                        <Line endX="-4.0" endY="-8.0" layoutX="34.0" layoutY="43.0" startX="148.0" startY="-8.0" stroke="#ddd1d1" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <Pane layoutX="208.0" layoutY="1.0" prefHeight="513.0" prefWidth="763.0" style="-fx-background-color: #fff;">
+               <children>
+                  <Label layoutX="157.0" layoutY="35.0" text="la table des abonnement" textFill="#383839">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Circle fill="#f94344" layoutX="742.0" layoutY="21.0" radius="14.0" stroke="WHITE" strokeType="INSIDE" />
+                  <Label fx:id="lblClose" alignment="CENTER" layoutX="728.0" layoutY="13.0" prefHeight="17.0" prefWidth="28.0" text="X" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tableabonnement" layoutX="493.0" layoutY="61.0" onMouseClicked="#selected" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="titrea" prefWidth="101.0" text="titre" />
+                      <TableColumn fx:id="dureea" prefWidth="98.0" text="duree" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="tfduree" layoutX="182.0" layoutY="212.0" prefHeight="31.0" prefWidth="192.0" promptText="veuillez entrez la duree" />
+                  <ComboBox fx:id="affecter" layoutX="175.0" layoutY="130.0" prefHeight="31.0" prefWidth="200.0" promptText="veuillez choisir le titre" />
+                  <Button fx:id="btnajouter" layoutX="35.0" layoutY="366.0" mnemonicParsing="false" onAction="#ajouterAbonnement" prefHeight="63.0" prefWidth="133.0" text="ajouter" />
+                  <Button fx:id="btnmodifier" layoutX="237.0" layoutY="366.0" mnemonicParsing="false" onAction="#modifierAbonnement" prefHeight="63.0" prefWidth="124.0" text="modifier" />
+                  <Button fx:id="btnsupprimer" layoutX="424.0" layoutY="366.0" mnemonicParsing="false" onAction="#supprimerAbonnement" prefHeight="63.0" prefWidth="174.0" text="supprimer" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
