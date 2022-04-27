@@ -27,7 +27,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import static pidev.Pidev.Userconnected;
-
+import com.jfoenix.controls.JFXButton;
 /**
  * FXML Controller class
  *
@@ -35,9 +35,7 @@ import static pidev.Pidev.Userconnected;
  */
 public class MainFXMLController implements Initializable {
 
-    @FXML
-    private Button profil;
-   
+  
     @FXML
     private ImageView logout;
     @FXML
@@ -45,7 +43,11 @@ public class MainFXMLController implements Initializable {
     @FXML
     private Label Role;
     @FXML
-    private Button utilisateur;
+    private JFXButton btnHome;
+    @FXML
+    private JFXButton profil;
+    @FXML
+    private JFXButton utilisateur;
 
     /**
      * Initializes the controller class.
@@ -54,8 +56,11 @@ public class MainFXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
          UserName.setText(Userconnected.getNomcomplet()+" "+Userconnected.getUsername());
+        
+
+    }
         // TODO
-    }    
+        
     private void GotoFXML(String vue, String title,Event aEvent) {
            try {
                Event event;
@@ -75,11 +80,7 @@ public class MainFXMLController implements Initializable {
         GotoFXML("ProfilAdminFXML", "darygym",event);
     }
 
-    @FXML
-    private void GotoGestReclamation(ActionEvent event) {
-    }
 
-    @FXML
     private void GotoGestMenu(ActionEvent event) {
          GotoFXML("AdminMenu","darygym",event);
     }

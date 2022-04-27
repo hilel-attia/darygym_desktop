@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Dhia
+ * @author hilel
  */
 public class DataSource {
     private String url="jdbc:mysql://127.0.0.1/darygym_database";

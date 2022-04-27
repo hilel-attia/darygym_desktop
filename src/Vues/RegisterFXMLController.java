@@ -134,7 +134,7 @@ public class RegisterFXMLController implements Initializable {
                
             Stage stage = (Stage) fermer.getScene().getWindow();
             stage.close();
-            GotoFXML("LoginFXML", "ForU", event);
+            GotoFXML("LoginFXML", "darygym", event);
            
 //        }else{System.out.println("number is wrong!!!");}
         //error_numtel

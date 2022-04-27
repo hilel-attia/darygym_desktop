@@ -100,12 +100,12 @@ public class ResetPasswordController implements Initializable {
      
     @FXML
     private void UpdateProfile(MouseEvent event) {
-         GotoFXML("ProfilFXML", "ForU", event);
+         GotoFXML("ProfilFXML", "darygym", event);
     }
 
     @FXML
     private void ResetPassword(MouseEvent event) {
-     GotoFXML("ResetPasswordFXML", "ForU", event);
+     GotoFXML("ResetPasswordFXML", "darygym", event);
     }
 
     @FXML
@@ -164,7 +164,7 @@ public class ResetPasswordController implements Initializable {
 
     @FXML
     private void backbtnmenu(MouseEvent event) {
-         GotoFXML("MainClientFXML", "ForU", event);
+         GotoFXML("MainClientFXML", "darygym", event);
     }
 
     @FXML

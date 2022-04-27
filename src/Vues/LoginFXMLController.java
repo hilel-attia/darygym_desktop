@@ -38,8 +38,6 @@ import javafx.scene.control.Alert;
 public class LoginFXMLController implements Initializable {
 
     @FXML
-    private ImageView imageview;
-    @FXML
     private TextField tfemail;
     @FXML
     private PasswordField pfpassword;

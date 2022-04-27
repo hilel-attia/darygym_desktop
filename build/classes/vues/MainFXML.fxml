@@ -1,38 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="572.0" prefWidth="633.0" style="-fx-background-color: #a9a9a9 , white , white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.MainFXMLController">
    <children>
-      <Button fx:id="profil" layoutX="194.0" layoutY="141.0" mnemonicParsing="false" onAction="#GotoGestionProfil" prefHeight="25.0" prefWidth="270.0" styleClass="all-btn" stylesheets="@../css/Style.css" text="Profil" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Button>
-      <ImageView fx:id="logout" fitHeight="60.0" fitWidth="60.0" layoutX="552.0" layoutY="492.0" onMouseClicked="#Logout">
-         <image>
-            <Image url="@../Ressources/logout.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="UserName" layoutX="31.0" layoutY="56.0" prefHeight="28.0" prefWidth="177.0" textAlignment="CENTER">
+      <Label fx:id="UserName" layoutX="1100.0" layoutY="35.0" prefHeight="28.0" prefWidth="177.0" textAlignment="CENTER">
          <font>
             <Font name="Monospaced Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="Role" layoutX="31.0" layoutY="16.0" prefHeight="28.0" prefWidth="91.0" text="Admin" textFill="#b9b2b2">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Label>
-      <Button fx:id="utilisateur" layoutX="194.0" layoutY="222.0" mnemonicParsing="false" onAction="#gotousers" prefHeight="25.0" prefWidth="270.0" styleClass="all-btn" stylesheets="@../css/Style.css" text="Utilisateur" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Button>
+      <JFXToolbar layoutY="-7.0" prefHeight="40.0" prefWidth="1360.0" style="-fx-min-height: 42; -fx-background-color: #222D32;">
+         <left>
+            <Label fx:id="Role" prefHeight="35.0" prefWidth="247.0" text="Admin  Dashboard" textFill="#b9b2b2" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </left>
+      </JFXToolbar>
+      <VBox layoutY="35.0" prefHeight="720.0" prefWidth="169.0" style="-fx-background-color: #2A3F54;">
+         <children>
+            <Label prefHeight="60.0" prefWidth="170.0" style="-fx-alignment: center; -fx-font-size: 16; -fx-text-fill: #7387A8; -fx-border-color: #7387A8; -fx-border-width: 0 0 2 0;" text="DaryGym" />
+            <JFXButton fx:id="btnHome" prefHeight="42.0" prefWidth="139.0" style="-fx-alignment: left;" styleClass="nav-button" text="Home" textFill="#a1aec4">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#a1aec4" glyphName="DASHBOARD" size="17.0" wrappingWidth="43.0" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="profil" layoutX="10.0" layoutY="109.0" onAction="#GotoGestionProfil" prefHeight="42.0" prefWidth="139.0" style="-fx-alignment: left;" styleClass="nav-button" text="profil" textFill="#a1aec4">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#a1aec4" glyphName="GROUP" size="17.0" wrappingWidth="43.0" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="utilisateur" layoutX="10.0" layoutY="193.0" onAction="#gotousers" prefHeight="42.0" prefWidth="139.0" style="-fx-alignment: left;" styleClass="nav-button" text="utilisateur" textFill="#a1aec4">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#a1aec4" glyphName="USER" size="17.0" wrappingWidth="43.0" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </VBox>
+      <ImageView fx:id="logout" fitHeight="40.0" fitWidth="40.0" layoutX="1283.0" layoutY="701.0" onMouseClicked="#Logout">
+         <image>
+            <Image url="@../Ressources/logout.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="206.0" layoutY="95.0" />
+      <Pane layoutX="223.0" layoutY="109.0" prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+         <children>
+            <Pane prefHeight="128.0" prefWidth="92.0" style="-fx-background-color: #00C0EF;" />
+            <VBox layoutX="106.0" layoutY="17.0">
+               <children>
+                  <Label prefHeight="36.0" prefWidth="155.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Utilisateures " />
+                  <Label prefHeight="27.0" prefWidth="106.0" style="-fx-font-size: 20; -fx-font-weight: BOLD;" text="50" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane layoutX="616.0" layoutY="109.0" prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+         <children>
+            <Pane prefHeight="128.0" prefWidth="92.0" style="-fx-background-color: #00A65A;" />
+            <VBox layoutX="106.0" layoutY="17.0">
+               <children>
+                  <Label prefHeight="36.0" prefWidth="155.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Admin" />
+                  <Label prefHeight="30.0" prefWidth="123.0" style="-fx-font-size: 20; -fx-font-weight: BOLD;" text="4" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane layoutX="962.0" layoutY="109.0" prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+         <children>
+            <Pane prefHeight="128.0" prefWidth="92.0" style="-fx-background-color: #F39C12;" />
+            <VBox layoutX="106.0" layoutY="17.0">
+               <children>
+                  <Label prefHeight="36.0" prefWidth="155.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Coach" />
+                  <Label prefHeight="27.0" prefWidth="106.0" style="-fx-font-size: 20; -fx-font-weight: BOLD;" text="6" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane layoutX="433.0" layoutY="331.0" prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+         <children>
+            <Pane prefHeight="128.0" prefWidth="92.0" style="-fx-background-color: #DD4B39;" />
+            <VBox layoutX="106.0" layoutY="17.0">
+               <children>
+                  <Label prefHeight="36.0" prefWidth="155.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Adherant" />
+                  <Label prefHeight="27.0" prefWidth="106.0" style="-fx-font-size: 20; -fx-font-weight: BOLD;" text="40" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane layoutX="616.0" layoutY="559.0" prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: #00A65A; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+         <children>
+            <Pane layoutY="101.0" prefHeight="27.0" prefWidth="277.0" style="-fx-background-color: #008548;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" prefHeight="20.0" prefWidth="155.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #F0F0F0;" text="More Info" />
+               </children>
+            </Pane>
+            <VBox layoutY="12.0" prefHeight="66.0" prefWidth="155.0">
+               <children>
+                  <Label prefHeight="43.0" prefWidth="64.0" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: white;" text="6" />
+                  <Label prefHeight="25.0" prefWidth="145.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: white;" text="offres" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane layoutX="962.0" layoutY="559.0" prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: #DD4B39; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+         <children>
+            <Pane layoutY="101.0" prefHeight="27.0" prefWidth="277.0" style="-fx-background-color: #B13C2E;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" prefHeight="20.0" prefWidth="155.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #F0F0F0;" text="More Info" />
+               </children>
+            </Pane>
+            <VBox layoutY="12.0" prefHeight="66.0" prefWidth="155.0">
+               <children>
+                  <Label prefHeight="43.0" prefWidth="64.0" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: white;" text="4" />
+                  <Label prefHeight="25.0" prefWidth="145.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: white;" text="abonnements" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane layoutX="223.0" layoutY="548.0" prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: #00C0EF; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+         <children>
+            <Pane layoutY="101.0" prefHeight="27.0" prefWidth="277.0" style="-fx-background-color: #009ABF;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" prefHeight="20.0" prefWidth="155.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #F0F0F0;" text="More Info" />
+               </children>
+            </Pane>
+            <VBox layoutY="12.0" prefHeight="66.0" prefWidth="155.0">
+               <children>
+                  <Label prefHeight="43.0" prefWidth="64.0" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: white;" text="6" />
+                  <Label prefHeight="25.0" prefWidth="191.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: white;" text=" reclamation" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane layoutX="791.0" layoutY="331.0" prefHeight="128.0" prefWidth="277.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);">
+         <children>
+            <Pane prefHeight="128.0" prefWidth="92.0" style="-fx-background-color: #00C0EF;" />
+            <VBox layoutX="106.0" layoutY="17.0">
+               <children>
+                  <Label prefHeight="36.0" prefWidth="155.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="evenmenets" />
+                  <Label prefHeight="27.0" prefWidth="106.0" style="-fx-font-size: 20; -fx-font-weight: BOLD;" text="5" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

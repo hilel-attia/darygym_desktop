@@ -99,7 +99,7 @@ public class ResetPasswordAdminController implements Initializable {
 
     @FXML
     private void UpdateProfile(MouseEvent event) {
-        GotoFXML("ProfilAdminFXML", "ForU", event);
+        GotoFXML("ProfilAdminFXML", "darygym", event);
     }
 
     @FXML
@@ -183,12 +183,12 @@ public class ResetPasswordAdminController implements Initializable {
 
     @FXML
     private void ResetPassword(MouseEvent event) {
-        GotoFXML("ResetPasswordAdmin", "ForU", event);
+        GotoFXML("ResetPasswordAdmin", "darygym", event);
     }
 
     @FXML
     private void backbtnmenu(MouseEvent event) {
-        GotoFXML("MainFXML", "ForU", event);
+        GotoFXML("MainFXML", "darygym", event);
     }
 
 }

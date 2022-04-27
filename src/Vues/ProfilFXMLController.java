@@ -169,7 +169,7 @@ public class ProfilFXMLController implements Initializable {
 
     @FXML
     private void UpdateProfile(MouseEvent event) {
-         GotoFXML("ProfilFXML", "ForU",event);
+         GotoFXML("ProfilFXML", "darygym",event);
     }
 
 
@@ -228,12 +228,12 @@ public class ProfilFXMLController implements Initializable {
 
     @FXML
     private void ResetPassword(MouseEvent event) {
-         GotoFXML("ResetPasswordFXML", "ForU",event);
+         GotoFXML("ResetPasswordFXML", "darygym",event);
     }
 
     @FXML
     private void backbtnmenu(MouseEvent event) {
-        GotoFXML("MainClientFXML", "ForU",event);
+        GotoFXML("MainClientFXML", "darygym",event);
     }
     
 }

@@ -168,12 +168,12 @@ public class ProfilAdminFXMLController implements Initializable {
 
     @FXML
     private void UpdateProfile(MouseEvent event) {
-         GotoFXML("ProfilAdminFXML", "ForU",event);
+         GotoFXML("ProfilAdminFXML", "darygym",event);
     }
     
     @FXML
     private void ResetPassword(MouseEvent event) {
-        GotoFXML("ResetPasswordAdmin", "ForU",event);
+        GotoFXML("ResetPasswordAdmin", "darygym",event);
     }
 
     @FXML

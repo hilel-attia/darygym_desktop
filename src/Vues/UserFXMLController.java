@@ -105,8 +105,6 @@ public class UserFXMLController implements Initializable {
     @FXML
     private ComboBox<String> cbrechpar;
     @FXML
-    private ImageView imageviewlogo;
-    @FXML
     private MenuBar menu;
     @FXML
     private RadioButton radadmin;
@@ -120,7 +118,6 @@ public class UserFXMLController implements Initializable {
     private Button pdf;
     @FXML
     private Button stat;
-
     /**
      * Initializes the controller class.
      */
@@ -137,7 +134,7 @@ public class UserFXMLController implements Initializable {
 
     @FXML
     public void updateTable() {
-        System.out.println("aaaaaaaaa");
+        System.out.println("table");
         radtous.setSelected(true);
         ObservableList<user> users = us.readAll();
         colnom.setCellValueFactory(new PropertyValueFactory<>("username"));
@@ -352,27 +349,27 @@ public class UserFXMLController implements Initializable {
             PdfWriter.getInstance(doc, new FileOutputStream(path + "/User.pdf"));
             doc.open();
 
-            PdfPTable table = new PdfPTable(8);
+            PdfPTable table = new PdfPTable(4);
             table.addCell("NOM");
-            table.addCell("NOM_COMPLET");
+           
             table.addCell("EMAIL");
-            table.addCell("PASSWORD");
-            table.addCell("DATE");
+          
+        
             table.addCell("ROLE");
 
             UserService u = new UserService();
             for (int i = 0; i < u.rowUSER(); i++) {
 
                 String Nom = tableuser.getColumns().get(0).getCellObservableValue(i).getValue().toString();
-                String Prenom = tableuser.getColumns().get(1).getCellObservableValue(i).getValue().toString();
-                String email = tableuser.getColumns().get(2).getCellObservableValue(i).getValue().toString();
-                String password = tableuser.getColumns().get(3).getCellObservableValue(i).getValue().toString();
-                String role = tableuser.getColumns().get(7).getCellObservableValue(i).getValue().toString();
+               
+                String email = tableuser.getColumns().get(1).getCellObservableValue(i).getValue().toString();
+                
+                String role = tableuser.getColumns().get(2).getCellObservableValue(i).getValue().toString();
 
                 table.addCell(Nom);
-                table.addCell(Prenom);
+               
                 table.addCell(email);
-                table.addCell(password);
+               
                 table.addCell(role);
 
             }
@@ -395,7 +392,7 @@ public class UserFXMLController implements Initializable {
         if (job != null) {
             job.showPrintDialog(root.getScene().getWindow()); // Window must be your main Stage
             Printer printer = job.getPrinter();
-            PageLayout pageLayout = printer.createPageLayout(Paper.A3, PageOrientation.LANDSCAPE, Printer.MarginType.HARDWARE_MINIMUM);
+            PageLayout pageLayout = printer.createPageLayout(Paper.A2, PageOrientation.LANDSCAPE, Printer.MarginType.HARDWARE_MINIMUM);
             boolean success = job.printPage(pageLayout, root);
             if (success) {
                 job.endJob();

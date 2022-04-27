@@ -41,8 +41,6 @@ public class MainClientFXMLController implements Initializable {
   
     @FXML
     private Label UserName;
-    @FXML
-    private Label Role;
 
     /**
      * Initializes the controller class.
