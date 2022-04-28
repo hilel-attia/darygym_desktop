@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="418.0" prefWidth="1024.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.darygym.gui.AfficheEvenementController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0"> 
+           <stylesheets>
+        <URL value="@AfficheEvenement.css" />
+    </stylesheets>
+         <children>
+            <TableView fx:id="EventTable" layoutX="32.0" layoutY="104.0" prefHeight="303.0" prefWidth="808.0">
+              <columns>
+                <TableColumn fx:id="NomCol" prefWidth="75.0" text="Nom" />
+                <TableColumn fx:id="DateCol" prefWidth="75.0" text="Date" />
+                  <TableColumn fx:id="descCol" prefWidth="92.0" text="Description" />
+                  <TableColumn fx:id="LieuCol" prefWidth="93.0" text="Lieu" />
+                  <TableColumn fx:id="PriceCol" prefWidth="93.0" text="prix" />
+                  <TableColumn fx:id="DatefinCol" prefWidth="93.0" text="DateFin" />
+                  <TableColumn fx:id="TypeCol" prefWidth="93.0" text="Type" />
+                  <TableColumn fx:id="ImageCol" prefWidth="93.0" text="Image" />
+                   <TableColumn fx:id="editCol" maxWidth="64.0" prefWidth="64.0" style="-fx-alignment: center;" text="NAME" />
+                   
+              </columns>
+            </TableView>
+            <Pane layoutY="45.0" prefHeight="4.0" prefWidth="775.0" style="-fx-background-color: black;" />
+            <Label layoutX="26.0" layoutY="-5.0" prefHeight="58.0" prefWidth="276.0" text="Gestion des Evenement : " textFill="#33308d">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="21.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView glyphName="CLOSE" layoutX="745.0" layoutY="27.0" onMouseClicked="#close" size="25" text="" />
+            <HBox layoutX="32.0" layoutY="65.0" prefHeight="41.0" prefWidth="83.0">
+               <children>
+                  <FontAwesomeIconView fill="#c32929" glyphName="USER_PLUS" onMouseClicked="#getAddevent" size="25">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                  <FontAwesomeIconView fill="#2a54e1" glyphName="REFRESH" onMouseClicked="#refraiche" size="25">
+                     <HBox.margin>
+                        <Insets right="21.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <ComboBox fx:id="TriChoice" layoutX="840.0" layoutY="39.0" onAction="#trie" prefWidth="150.0" />
+   </children>
+</AnchorPane>
