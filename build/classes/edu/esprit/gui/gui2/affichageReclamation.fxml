@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0f056b;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.gui2.AffichageReclamationController">
+   <children>
+      <TableView fx:id="table" layoutX="-6.0" onMouseClicked="#showvalues" prefHeight="258.0" prefWidth="606.0">
+        <columns>
+          <TableColumn fx:id="nom" prefWidth="54.0" text="Nom" />
+          <TableColumn fx:id="prenom" minWidth="9.0" prefWidth="55.0" text="Prénom" />
+            <TableColumn fx:id="Titre" prefWidth="133.0" text="Titre" />
+            <TableColumn fx:id="cree" prefWidth="111.0" text="Crée le " />
+            <TableColumn fx:id="description" prefWidth="81.0" text="Description" />
+            <TableColumn fx:id="statut" prefWidth="74.0" text="Statut" />
+            <TableColumn fx:id="type" prefWidth="97.0" text="Type" />
+        </columns>
+      </TableView>
+      <Button layoutX="151.0" layoutY="355.0" mnemonicParsing="false" onAction="#btnremove" text="remove" />
+      <TextField fx:id="titreTextField" layoutX="247.0" layoutY="355.0" />
+      <Button layoutX="151.0" layoutY="316.0" mnemonicParsing="false" onAction="#Excel" text="Excel" />
+      <TextField fx:id="recherche" layoutX="154.0" layoutY="267.0" />
+      <Button layoutX="79.0" layoutY="267.0" mnemonicParsing="false" onAction="#recherche" text="rechercher" />
+   </children>
+</AnchorPane>
