@@ -19,7 +19,7 @@ public class DaryGym2 extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("GestionOffres.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FrontOffre.fxml"));
         
         Scene scene = new Scene(root);
         stage.setScene(scene);

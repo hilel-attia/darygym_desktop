@@ -22,6 +22,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.print.Printer;
+import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -35,6 +37,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import models.Abonnement;
 import models.Offres;
@@ -48,6 +51,9 @@ import utils.DataSource;
  * @author LENOVO
  */
 public class GestionAbonnementController implements Initializable {
+    public static int  nh = 0 ,nf=0 , ne = 0 ;  
+            ObservableList<String> list = FXCollections.observableArrayList("un mois","six mois","un an");
+    
 
     @FXML
     private TableView<Abonnement> tableabonnement;
@@ -63,7 +69,6 @@ public class GestionAbonnementController implements Initializable {
     private TableColumn<Abonnement,String> dureea;
     private TableColumn<Abonnement,String> titre;
     private Abonnement c; 
-  ObservableList<Abonnement>  list =  FXCollections.observableArrayList();
       int  index= -1;
      
      
@@ -76,6 +81,8 @@ public class GestionAbonnementController implements Initializable {
     private Label lblClose;
     @FXML
     private TableColumn<Abonnement, String> titrea;
+    @FXML
+    private Button stat;
    
 
     /**
@@ -83,6 +90,7 @@ public class GestionAbonnementController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
             try {
             fillcombo();
         } 
@@ -369,6 +377,33 @@ public class GestionAbonnementController implements Initializable {
               stage.setScene(scene);
               stage.show();
     }
+    @FXML
+    private void stat(ActionEvent event) throws IOException{
+       AbonnementServices ser= new AbonnementServices();
+        
+        List<Abonnement> li =ser.afficher(); 
+        int i = 0; 
+
+        
+        for ( i=0 ; i<li.size();i++){
+        if (li.get(i).getDuree().equals("un mois"))
+        
+        {nh=nh+1;}  ;
+        if (li.get(i).getDuree().equals("six mois")){nf=nf+1 ; } 
+        if (li.get(i).getDuree().equals("un an")){ne=ne+1 ; }  }
+        
+        FXMLLoader loader = new FXMLLoader();
+        
+        loader.setLocation(getClass().getResource("AbnStat.fxml"));
+         Parent root = loader.load();
+        tfduree.getScene().setRoot(root);
+    }
+
+    
+ }
+    
+
+    
    
     
     
@@ -376,4 +411,4 @@ public class GestionAbonnementController implements Initializable {
     
     
     
-}
+

@@ -122,6 +122,7 @@
                   <Button fx:id="btnajouter" layoutX="35.0" layoutY="366.0" mnemonicParsing="false" onAction="#ajouterAbonnement" prefHeight="63.0" prefWidth="133.0" text="ajouter" />
                   <Button fx:id="btnmodifier" layoutX="237.0" layoutY="366.0" mnemonicParsing="false" onAction="#modifierAbonnement" prefHeight="63.0" prefWidth="124.0" text="modifier" />
                   <Button fx:id="btnsupprimer" layoutX="424.0" layoutY="366.0" mnemonicParsing="false" onAction="#supprimerAbonnement" prefHeight="63.0" prefWidth="174.0" text="supprimer" />
+                  <Button fx:id="stat" layoutX="27.0" layoutY="146.0" mnemonicParsing="false" onAction="#stat" text="calcul" />
                </children>
             </Pane>
          </children>

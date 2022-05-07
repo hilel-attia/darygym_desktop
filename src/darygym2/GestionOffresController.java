@@ -52,7 +52,6 @@ import com.pdfjet.A4;
 import com.pdfjet.Cell;
 import com.pdfjet.CoreFont;
 import com.pdfjet.Font;
-
 import com.pdfjet.PDF;
 import com.pdfjet.Page;
 import com.pdfjet.Table;
@@ -521,14 +520,14 @@ ObservableList<Offres>  list1 =  FXCollections.observableArrayList();
     String lowerCaseFilter = newValue.toLowerCase();
     
     if (person.getImage().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
-     return true; // Filter matches username
+     return true; // Filter matches image
     } else if (person.getTitre().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-     return true; // Filter matches password
+     return true; // Filter matches titre
     }else if (person.getDescription().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-     return true; // Filter matches password
+     return true; // Filter matches description
     }
     else if (String.valueOf(person.getPrix()).indexOf(lowerCaseFilter)!=-1)
-         return true;// Filter matches email
+         return true;// Filter matches prix
                                 
          else  
           return false; // Does not match.
@@ -552,10 +551,9 @@ ObservableList<Offres>  list1 =  FXCollections.observableArrayList();
         Table table = new Table() ; 
         List<List<Cell>> tabledata = new ArrayList<List<Cell>>() ;       
         List<Cell> tablerow = new ArrayList<Cell>() ; 
-        Cell cell = new Cell(f1,imagea.getText());
-        tablerow.add(cell) ; 
+       
         
-          cell = new Cell(f1,titrea.getText());
+         Cell cell = new Cell(f1,titrea.getText());
         tablerow.add(cell) ;
         cell = new Cell(f1,descriptiona.getText());
         tablerow.add(cell) ;
@@ -576,16 +574,15 @@ ObservableList<Offres>  list1 =  FXCollections.observableArrayList();
         List<Offres> li =ser.ListClasse();
   int i =0 ; 
 for ( i=0 ; i<li.size();i++){
-   Cell nc = new Cell(f2, li.get(i).getImage()) ; 
+ 
         Cell prc = new Cell(f2,li.get(i).getTitre()) ;
          
-        
         
         Cell gc = new Cell(f2,li.get(i).getDescription()) ; 
         Cell lc = new Cell(f2,String.valueOf(li.get(i).getPrix())) ; 
         
         tablerow = new ArrayList<Cell>() ; 
-        tablerow.add(nc) ; tablerow.add(prc) ; tablerow.add(gc) ; tablerow.add(lc)  ; 
+       tablerow.add(prc) ; tablerow.add(gc) ; tablerow.add(lc)  ; 
         
     tabledata.add(tablerow) ; 
     table.setData(tabledata);
